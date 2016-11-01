@@ -22,7 +22,8 @@ namespace DbInlämningsuppgift1
         {
             InitializeComponent();
             DisplayContacts();
-            
+            cmdDeleteContact.Visible = false;
+            cmdEditContact.Visible = false;
 
         }
         private void DisplayContacts()
@@ -40,7 +41,7 @@ namespace DbInlämningsuppgift1
 
             }
             dgwDisplayContacts.Rows.Clear();
-            
+
             foreach (var contact in ContactList)
             {
                 dgwDisplayContacts.Rows.Add(contact);
@@ -52,6 +53,9 @@ namespace DbInlämningsuppgift1
             txtPhoneNr.Clear();
             txtEmail.Clear();
             dtpBirthday.ResetText();
+        
+           
+
 
         }
         
@@ -140,28 +144,35 @@ namespace DbInlämningsuppgift1
                 dlt.Entry(contactToDelete).State = EntityState.Deleted;
                 dlt.SaveChanges();
             }
+            dgwDisplaySearchResult.DataSource = null;
             DisplayContacts();
         }
 
         private void dgwDisplayContacts_SelectionChanged(object sender, EventArgs e)
         {
-            
-            try { 
-            if (dgwDisplayContacts.SelectedCells[0] != null) {
+            cmdDeleteContact.Visible = true;
+            cmdEditContact.Visible = true;
+            if (dgwDisplayContacts.SelectedCells.Count > 0) { 
                     selectedPerson = (Contact)dgwDisplayContacts.CurrentCell.Value;
             var selectedContact = (from c in ContactList
                                   where c.ContactId.Equals(selectedPerson.ContactId)
                                   select c).ToList();
             dgwDisplaySearchResult.DataSource = selectedContact;
 
-                    
-
-                }
             }
-            catch
+            else
             {
-
+                cmdDeleteContact.Visible = false;
+                cmdEditContact.Visible = false;
+                
+                
             }
+           
+
+
+            //}
+
+
         }
 
         private void txtSearchName_KeyUp(object sender, KeyEventArgs e)

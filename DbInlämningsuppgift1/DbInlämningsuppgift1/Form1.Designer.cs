@@ -71,7 +71,7 @@
             this.txtName.Location = new System.Drawing.Point(86, 15);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(236, 20);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 0;
             // 
             // txtStreetAddress
             // 
@@ -85,35 +85,35 @@
             this.txtZipcode.Location = new System.Drawing.Point(86, 67);
             this.txtZipcode.Name = "txtZipcode";
             this.txtZipcode.Size = new System.Drawing.Size(236, 20);
-            this.txtZipcode.TabIndex = 1;
+            this.txtZipcode.TabIndex = 2;
             // 
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(86, 93);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(236, 20);
-            this.txtCity.TabIndex = 1;
+            this.txtCity.TabIndex = 3;
             // 
             // txtPhoneNr
             // 
             this.txtPhoneNr.Location = new System.Drawing.Point(86, 119);
             this.txtPhoneNr.Name = "txtPhoneNr";
             this.txtPhoneNr.Size = new System.Drawing.Size(236, 20);
-            this.txtPhoneNr.TabIndex = 1;
+            this.txtPhoneNr.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(86, 145);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(236, 20);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 5;
             // 
             // dtpBirthday
             // 
             this.dtpBirthday.Location = new System.Drawing.Point(86, 171);
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(236, 20);
-            this.dtpBirthday.TabIndex = 2;
+            this.dtpBirthday.TabIndex = 6;
             // 
             // label1
             // 
@@ -215,7 +215,8 @@
             this.ColumnContactName});
             this.dgwDisplayContacts.Location = new System.Drawing.Point(8, 15);
             this.dgwDisplayContacts.Name = "dgwDisplayContacts";
-            this.dgwDisplayContacts.Size = new System.Drawing.Size(141, 264);
+            this.dgwDisplayContacts.RowHeadersVisible = false;
+            this.dgwDisplayContacts.Size = new System.Drawing.Size(98, 264);
             this.dgwDisplayContacts.TabIndex = 5;
             this.dgwDisplayContacts.SelectionChanged += new System.EventHandler(this.dgwDisplayContacts_SelectionChanged);
             // 
